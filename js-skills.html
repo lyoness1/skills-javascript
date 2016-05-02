@@ -97,7 +97,17 @@
 </fieldset>
 
 <script>
-  // code here for above problem
+  // sets the button to a variable
+  var popUpButton = document.getElementById("popup-alert-button");
+
+  // shows a popup
+  function showPopUp(evt) {
+    alert("Stop clicking me!");
+  }
+
+  // makes the button show the popup when clicked
+  popUpButton.addEventListener('click', showPopUp);
+
 </script>
 
 
@@ -115,7 +125,18 @@
 </fieldset>
 
 <script>
-  // code here for above-problem
+  // sets the button and the display text to variables
+  var ciaoButton = document.getElementById("change-hello-to-goodbye-button");
+  var text = document.getElementById("message-to-change");
+
+  // changes text
+  function changeText(evt) {
+    text.innerText = "Goodbye!";
+  }
+
+  // makes the button change the text when clicked
+  ciaoButton.addEventListener('click', changeText);
+
 </script>
 
 <div class="hint">
@@ -144,7 +165,18 @@
 </fieldset>
 
 <script>
-  // code here for above problem
+  // sets the button to a variable
+  var submitButton = document.getElementById("prevent-form-submission-form");
+
+  // prevents submit and shows an alert popup
+  function preventsSubmit(evt) {
+    evt.preventDefault();
+    alert("This happens instead!");
+  }
+
+  // listens for a submit (click or enter) and prevents sending data
+  submitButton.addEventListener('submit', preventsSubmit);
+
 </script>
 
 <div class="hint">
@@ -174,22 +206,17 @@
 </fieldset>
 
 <script>
-//  Here's a stub of a function you can use!
+  // reverses the string and displays the reversed message in a popup
+  function reverseString() {
+    var msg = "Porcupines are cute";
+    var newMsg = msg.split("").reverse().join("");
+    alert(newMsg);
+  }
 
-//  function reverseString() {
-//    var msg = "Porcupines are cute";
-//
-//    // do some stuff here to reverse that string into a new variable
-//    var newMsg = "This should be the reversed string";
-//
-//    alert(newMsg);
-//  }
+  // listens for a click on the button
+  var button = document.getElementById('reverse-string-button');
+  button.addEventListener('click', reverseString);
 
-// Here's a stub of event stuff you could use
-//
-
-//  var button = document.getElementById('reverse-string-button');
-//  button.addEventListener('click', reverseString);
 </script>
 
 
@@ -212,8 +239,15 @@
   <input type="button" class="tricky-to-find" value="Pop-Up Please!">
 </fieldset>
 
+<!-- import jQuery to the file -->
+<script src="https://code.jquery.com/jquery.js"></script>
 <script>
-  // code here for above problem
+
+  // finds the button by class, adds a click eventListener, and calls the anonymous function to show the alert
+  $(".tricky-to-find").click(function() {
+    alert("You found me!");
+  });
+
 </script>
 
 <div class="hint">
@@ -240,7 +274,12 @@
 </fieldset>
 
 <script>
-  // put your code here
+  // sets the image to a variable b/c it is used multiple times
+  var image = $("#kittenz-rule");
+  // resets the image to a dog when double clicked
+  image.dblclick(function() {
+    image.attr('src', 'http://www.petcollectionworld.com/wp-content/uploads/2012/10/Cute-St-Bernard-Puppies-picture.jpg')
+  });
 </script>
 
 <div class="hint">
@@ -273,7 +312,15 @@
 </fieldset>
 
 <script>
-  // put your code here
+  
+  // adds a click event listener to the button that calls showPorcupine
+  $("#make-a-porcupine").click(showPorcupine);
+  
+  // fades the picture in after a delay of one second
+  function showPorcupine(evt) {
+    $("#cute-porcupine-image").delay(1000).fadeIn(3000);
+  }
+
 </script>
 
 <div class="hint">
